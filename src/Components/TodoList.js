@@ -26,7 +26,7 @@ export const TodoList = () => {
 
   const addTodo = (todo) => {
     axios
-      .post('http://localhost:4000/add', { title: todo })
+      .post('http://localhost:4000/create', { title: todo })
       .then((response) => {
         // console.log(response.data);
         taskList();

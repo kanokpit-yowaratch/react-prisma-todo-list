@@ -1,12 +1,24 @@
-import { PrismaClient } from '@prisma/client';
-import cors from 'cors';
 import express from 'express';
+import cors from 'cors';
+import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+
+app.post(`/create`, async (req, res) => {
+    const { title } = req.body
+    const result = await prisma.toDoList.create({
+        data: {
+            title,
+            authorId: 1,
+        },
+    })
+    res.json(result)
+})
 
 app.post(`/done`, async (req, res) => {
     const { id, status } = req.body
@@ -24,18 +36,6 @@ app.post(`/done`, async (req, res) => {
 app.get('/list', async (req, res) => {
     const posts = await prisma.toDoList.findMany()
     res.json(posts)
-})
-
-app.post(`/add`, async (req, res) => {
-    const { title } = req.body
-    const result = await prisma.toDoList.create({
-        data: {
-            title,
-            status: false,
-            authorId: 1,
-        },
-    })
-    res.json(result)
 })
 
 app.post(`/update`, async (req, res) => {
@@ -59,8 +59,6 @@ app.delete('/delete/:id', async (req, res) => {
     res.json(post)
 })
 
-// TODO...
-
 app.get('/in-progress', async (req, res) => {
     const posts = await prisma.toDoList.findMany({
         where: { status: true },
@@ -70,8 +68,7 @@ app.get('/in-progress', async (req, res) => {
 })
 
 app.get('/filter-task', async (req, res) => {
-    // const { searchString }: { searchString?: string } = req.query; // typescript
-    const { searchString } = req.query;
+    const { searchString }: { searchString?: string } = req.query;
     const filteredPosts = await prisma.toDoList.findMany({
         where: {
             OR: [

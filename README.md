@@ -5,7 +5,7 @@ This is a React TODO app and express server that using Prisma to be a simple dat
 
 ## Tech Stack
 
-  `React` `Express` `Prisma` `JavaScript`
+  `React` `Express` `Prisma` `TypeScript`
 
 
 ## Configuration
@@ -18,13 +18,13 @@ npx prisma migrate dev --name init
 ## Run frontend app
   ```
   npm install
-  npm run start
+  npm start
   ```
 
 ## Run backend app
   ```
   npm install
-  npm run start
+  npm start
   ```
 
 ## To create a production build
