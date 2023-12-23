@@ -1,14 +1,14 @@
 <p align="center">
-  <a href="https://react.dev/" target="blank" rel="noreferrer" style="text-decoration: none;">
+  <a href="https://react.dev/" target="blank" rel="noreferrer">
     <img src="./public/logo192.png" width="70" alt="React" />
   </a>
-  <a href="https://expressjs.com/" target="blank" rel="noreferrer" style="text-decoration: none;">
+  <a href="https://expressjs.com/" target="blank" rel="noreferrer">
     <img src="./public/expressjs.svg" width="70" alt="Nest" />
   </a>
-  <a href="https://www.prisma.io/" target="blank" rel="noreferrer" style="text-decoration: none;">
+  <a href="https://www.prisma.io/" target="blank" rel="noreferrer">
     <img src="./public/prisma.svg" width="70" alt="Prisma" />
   </a>
-  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer" style="text-decoration: none;">
+  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="70" alt="TypeScript" />
   </a>
 </p>
