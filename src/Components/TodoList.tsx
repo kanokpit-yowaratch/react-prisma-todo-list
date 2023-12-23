@@ -4,8 +4,19 @@ import { TodoForm } from "./TodoForm";
 import { EditTodoForm } from "./EditTodoForm";
 import axios from "axios";
 
+interface TodoObject {
+  id: number;
+  status: boolean;
+}
+
+interface TodoEdit {
+  id: number;
+  status: boolean;
+  isEditing: boolean;
+}
+
 export const TodoList = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<TodoEdit[]>([]);
 
   const taskList = () =>
     axios
@@ -24,7 +35,7 @@ export const TodoList = () => {
     taskList();
   }, []);
 
-  const addTodo = (todo) => {
+  const addTodo = (todo: TodoObject) => {
     axios
       .post('http://localhost:4000/create', { title: todo })
       .then((response) => {
@@ -36,7 +47,7 @@ export const TodoList = () => {
       });
   }
 
-  const toDone = (id) => {
+  const toDone = (id: number) => {
     axios
       .post('http://localhost:4000/done', { id: id, status: false })
       .then((response) => {
@@ -48,7 +59,7 @@ export const TodoList = () => {
       });
   }
 
-  const restoreTask = (id) => {
+  const restoreTask = (id: number) => {
     axios
       .post('http://localhost:4000/done', { id: id, status: true })
       .then((response) => {
@@ -60,15 +71,12 @@ export const TodoList = () => {
       });
   }
 
-  const editTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, isEditing: todo.status } : todo
-      )
-    );
+  const editTodo = (id: number) => {
+    const todoDatas: TodoEdit[] = todos.map((todo) => todo.id === id ? { ...todo, isEditing: todo.status } : todo);
+    setTodos(todoDatas);
   }
 
-  const editTask = (newTitle, id) => {
+  const editTask = (newTitle: string, id: number) => {
     axios
       .post('http://localhost:4000/update', { id: id, title: newTitle })
       .then((response) => {
@@ -80,7 +88,7 @@ export const TodoList = () => {
       });
   };
 
-  const deleteTodo = (id) => {
+  const deleteTodo = (id: number) => {
     console.log(id);
     axios
       .delete('http://localhost:4000/delete/' + id)

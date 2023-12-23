@@ -1,12 +1,15 @@
 <p align="center">
-  <a href="https://react.dev/learn" target="blank">
-    <img src="https://avatars.githubusercontent.com/u/6412038?s=120" width="120" alt="React Logo" />
+  <a href="https://react.dev/" target="blank" rel="noreferrer">
+    <img src="./public/logo192.png" width="120" alt="React" />
   </a>
-  <a href="https://nestjs.com/" target="blank">
-    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
+  <a href="https://expressjs.com/" target="blank" rel="noreferrer">
+    <img src="./public/expressjs.svg" width="120" alt="Nest" />
   </a>
-  <a href="https://www.prisma.io/" target="blank">
-    <img src="https://avatars.githubusercontent.com/u/17219288?s=120" width="120" alt="Prisma Logo" />
+  <a href="https://www.prisma.io/" target="blank" rel="noreferrer">
+    <img src="./public/prisma.svg" width="120" alt="Prisma" />
+  </a>
+  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="120" alt="TypeScript" />
   </a>
 </p>
 
@@ -35,7 +38,7 @@ npx prisma migrate dev --name init
 
 ## Run backend app
 
-### **<span style="color:gold;">cd backend</span>**
+### **`cd backend`**
 
   ```
   npm install

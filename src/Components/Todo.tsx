@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare, faRefresh, faTrash } from '@fortawesome/free-solid-svg-icons'
-export const Todo = ({ task, editTodo, toDone, restoreTask, deleteTodo }) => {
+export const Todo = ({ task, editTodo, toDone, restoreTask, deleteTodo }: any) => {
 
   return (
     <div className="todo-item">

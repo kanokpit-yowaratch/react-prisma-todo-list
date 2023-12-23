@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-export const TodoForm = ({ addTodo }) => {
+export const TodoForm = ({ addTodo }: any) => {
   const [value, setValue] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     if (value) {
       addTodo(value);
